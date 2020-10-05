@@ -1,0 +1,21 @@
+
+.btn-dev{
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 6px;
+    outline: none;
+
+    &.primary{
+        background-color: #00a6ff;
+        color: white;
+    }
+    &.success{
+        background-color: #29ca8b;
+        color: white;
+    }
+    &.danger{
+        background-color: #ff6262;
+        color: white;
+    }
+}
