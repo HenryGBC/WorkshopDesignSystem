@@ -9,6 +9,12 @@ export namespace Components {
     interface ButtonDev {
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     }
+    interface CardDev {
+    }
+    interface CardDevBody {
+    }
+    interface CardDevFooter {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -31,6 +37,24 @@ declare global {
         prototype: HTMLButtonDevElement;
         new (): HTMLButtonDevElement;
     };
+    interface HTMLCardDevElement extends Components.CardDev, HTMLStencilElement {
+    }
+    var HTMLCardDevElement: {
+        prototype: HTMLCardDevElement;
+        new (): HTMLCardDevElement;
+    };
+    interface HTMLCardDevBodyElement extends Components.CardDevBody, HTMLStencilElement {
+    }
+    var HTMLCardDevBodyElement: {
+        prototype: HTMLCardDevBodyElement;
+        new (): HTMLCardDevBodyElement;
+    };
+    interface HTMLCardDevFooterElement extends Components.CardDevFooter, HTMLStencilElement {
+    }
+    var HTMLCardDevFooterElement: {
+        prototype: HTMLCardDevFooterElement;
+        new (): HTMLCardDevFooterElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -39,12 +63,21 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "button-dev": HTMLButtonDevElement;
+        "card-dev": HTMLCardDevElement;
+        "card-dev-body": HTMLCardDevBodyElement;
+        "card-dev-footer": HTMLCardDevFooterElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface ButtonDev {
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+    }
+    interface CardDev {
+    }
+    interface CardDevBody {
+    }
+    interface CardDevFooter {
     }
     interface MyComponent {
         /**
@@ -62,6 +95,9 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "button-dev": ButtonDev;
+        "card-dev": CardDev;
+        "card-dev-body": CardDevBody;
+        "card-dev-footer": CardDevFooter;
         "my-component": MyComponent;
     }
 }
@@ -70,6 +106,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "button-dev": LocalJSX.ButtonDev & JSXBase.HTMLAttributes<HTMLButtonDevElement>;
+            "card-dev": LocalJSX.CardDev & JSXBase.HTMLAttributes<HTMLCardDevElement>;
+            "card-dev-body": LocalJSX.CardDevBody & JSXBase.HTMLAttributes<HTMLCardDevBodyElement>;
+            "card-dev-footer": LocalJSX.CardDevFooter & JSXBase.HTMLAttributes<HTMLCardDevFooterElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
