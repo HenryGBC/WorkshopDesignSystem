@@ -15,6 +15,18 @@ export namespace Components {
     }
     interface CardDevFooter {
     }
+    interface ModalBackdropDev {
+    }
+    interface ModalBodyDev {
+        "content": string;
+        "head": string;
+        "open": () => Promise<void>;
+    }
+    interface ModalDev {
+        "content": string;
+        "head": string;
+        "open": () => Promise<void>;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -55,6 +67,24 @@ declare global {
         prototype: HTMLCardDevFooterElement;
         new (): HTMLCardDevFooterElement;
     };
+    interface HTMLModalBackdropDevElement extends Components.ModalBackdropDev, HTMLStencilElement {
+    }
+    var HTMLModalBackdropDevElement: {
+        prototype: HTMLModalBackdropDevElement;
+        new (): HTMLModalBackdropDevElement;
+    };
+    interface HTMLModalBodyDevElement extends Components.ModalBodyDev, HTMLStencilElement {
+    }
+    var HTMLModalBodyDevElement: {
+        prototype: HTMLModalBodyDevElement;
+        new (): HTMLModalBodyDevElement;
+    };
+    interface HTMLModalDevElement extends Components.ModalDev, HTMLStencilElement {
+    }
+    var HTMLModalDevElement: {
+        prototype: HTMLModalDevElement;
+        new (): HTMLModalDevElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -66,6 +96,9 @@ declare global {
         "card-dev": HTMLCardDevElement;
         "card-dev-body": HTMLCardDevBodyElement;
         "card-dev-footer": HTMLCardDevFooterElement;
+        "modal-backdrop-dev": HTMLModalBackdropDevElement;
+        "modal-body-dev": HTMLModalBodyDevElement;
+        "modal-dev": HTMLModalDevElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -78,6 +111,17 @@ declare namespace LocalJSX {
     interface CardDevBody {
     }
     interface CardDevFooter {
+    }
+    interface ModalBackdropDev {
+    }
+    interface ModalBodyDev {
+        "content"?: string;
+        "head"?: string;
+        "onClose"?: (event: CustomEvent<any>) => void;
+    }
+    interface ModalDev {
+        "content"?: string;
+        "head"?: string;
     }
     interface MyComponent {
         /**
@@ -98,6 +142,9 @@ declare namespace LocalJSX {
         "card-dev": CardDev;
         "card-dev-body": CardDevBody;
         "card-dev-footer": CardDevFooter;
+        "modal-backdrop-dev": ModalBackdropDev;
+        "modal-body-dev": ModalBodyDev;
+        "modal-dev": ModalDev;
         "my-component": MyComponent;
     }
 }
@@ -109,6 +156,9 @@ declare module "@stencil/core" {
             "card-dev": LocalJSX.CardDev & JSXBase.HTMLAttributes<HTMLCardDevElement>;
             "card-dev-body": LocalJSX.CardDevBody & JSXBase.HTMLAttributes<HTMLCardDevBodyElement>;
             "card-dev-footer": LocalJSX.CardDevFooter & JSXBase.HTMLAttributes<HTMLCardDevFooterElement>;
+            "modal-backdrop-dev": LocalJSX.ModalBackdropDev & JSXBase.HTMLAttributes<HTMLModalBackdropDevElement>;
+            "modal-body-dev": LocalJSX.ModalBodyDev & JSXBase.HTMLAttributes<HTMLModalBodyDevElement>;
+            "modal-dev": LocalJSX.ModalDev & JSXBase.HTMLAttributes<HTMLModalDevElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

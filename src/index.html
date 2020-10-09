@@ -29,5 +29,23 @@
       </card-dev>
 
     </div>
+
+    <h2>Open Modal</h2>
+    <button-dev color="primary" id="btn-modal">Click here</button-dev>
+
+    
+    <modal-dev head="Title modal" content=" This is a a modal"></modal-dev>
+    <!-- <my-backdrop></my-backdrop> -->
+    <!-- <my-modal head="Title Modal"  content="This is an importan information!"></my-modal> -->
+
+
+    <script>
+      var btn = document.getElementById('btn-modal');
+      var modal = document.querySelector('modal-dev');
+      console.log(modal);
+      btn.addEventListener('click', function(){
+        modal.open();   
+      })
+    </script>
   </body>
 </html>
